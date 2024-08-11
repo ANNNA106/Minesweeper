@@ -83,5 +83,56 @@ function clickTile() {
         }
         return;
     }
+    if (minesLocation.includes(tile.id)) {
+        // alert("GAME OVER");
+        gameOver = true;
+        revealMines();
+        return;
+    }
 
+
+    let coords = tile.id.split("-"); // "0-0" -> ["0", "0"]
+    let r = parseInt(coords[0]);
+    let c = parseInt(coords[1]);
+    checkMine(r, c);
+
+}
+
+function revealMines() {
+    for (let r= 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            let tile = board[r][c];
+            if (minesLocation.includes(tile.id)) {
+                tile.innerText = "💣";
+                tile.style.backgroundColor = "red";                
+            }
+        }
+    }
+}
+
+function checkMine(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+        return;
+    }
+    if (board[r][c].classList.contains("tile-clicked")) {
+        return;
+    }
+
+    board[r][c].classList.add("tile-clicked");
+    tilesClicked += 1;
+
+    if (tilesClicked == rows * columns - minesCount) {
+        document.getElementById("mines-count").innerText = "Cleared";
+        gameOver = true;
+    }
+}
+
+function checkTile(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
+        return 0;
+    }
+    if (minesLocation.includes(r.toString() + "-" + c.toString())) {
+        return 1;
+    }
+    return 0;
 }
