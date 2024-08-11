@@ -109,6 +109,11 @@ function revealMines() {
             }
         }
     }
+    const restartButton = document.getElementById('restartButton');
+    restartButton.style.display = "flex";
+    restartButton.addEventListener('click', function() {
+        location.reload();
+    });
 }
 
 function checkMine(r, c) {
