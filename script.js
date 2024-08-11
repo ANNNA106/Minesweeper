@@ -83,6 +83,7 @@ function clickTile() {
         }
         return;
     }
+
     if (minesLocation.includes(tile.id)) {
         // alert("GAME OVER");
         gameOver = true;
@@ -120,6 +121,44 @@ function checkMine(r, c) {
 
     board[r][c].classList.add("tile-clicked");
     tilesClicked += 1;
+
+    let minesFound = 0;
+
+    //top 3
+    minesFound += checkTile(r-1, c-1);      //top left
+    minesFound += checkTile(r-1, c);        //top 
+    minesFound += checkTile(r-1, c+1);      //top right
+
+    //left and right
+    minesFound += checkTile(r, c-1);        //left
+    minesFound += checkTile(r, c+1);        //right
+
+    //bottom 3
+    minesFound += checkTile(r+1, c-1);      //bottom left
+    minesFound += checkTile(r+1, c);        //bottom 
+    minesFound += checkTile(r+1, c+1);      //bottom right
+
+    if (minesFound > 0) {
+        board[r][c].innerText = minesFound;
+        board[r][c].classList.add("x" + minesFound.toString());
+    }
+    else {
+        board[r][c].innerText = "";
+        
+        //top 3
+        checkMine(r-1, c-1);    //top left
+        checkMine(r-1, c);      //top
+        checkMine(r-1, c+1);    //top right
+
+        //left and right
+        checkMine(r, c-1);      //left
+        checkMine(r, c+1);      //right
+
+        //bottom 3
+        checkMine(r+1, c-1);    //bottom left
+        checkMine(r+1, c);      //bottom
+        checkMine(r+1, c+1);    //bottom right
+    }
 
     if (tilesClicked == rows * columns - minesCount) {
         document.getElementById("mines-count").innerText = "Cleared";
