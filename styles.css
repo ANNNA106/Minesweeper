@@ -1,20 +1,46 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    text-align: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 #board {
     width: 400px;
     height: 400px;
-    border: 10px solid darkgray;
     background-color: lightgray;
-
-    margin: 0 auto;
+    /* border: 10px solid darkgray;
+    margin: 0 auto; */
+    margin-top: 20px;
+    border: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
 }
@@ -65,6 +91,30 @@ body {
 
 .x8 {
     color: gray;
+}
+/* Modal overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Modal content */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 #restartButton {
@@ -118,7 +168,16 @@ body {
     background-color: #45a049;
 }
 
-#difficultyDropdown {
+.difficulty-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.difficulty-option.selected {
+    background-color: #d3d3d3; /* Highlight color */
+}
+
+#difficultyOptions {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;

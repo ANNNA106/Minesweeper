@@ -13,16 +13,35 @@ let flagEnabled = false;
 let gameOver = false;
 
 window.onload = function() {
-    startGame();
+    level = localStorage.getItem('difficulty');
+    this.value = level;
+    console.log("level",level, this.value);
     document.getElementById('difficultyButton').addEventListener('click', function() {
-        var dropdown = document.getElementById('difficultyDropdown');
+        var dropdown = document.getElementById('difficultyOptions');
         dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
     });
-    
-    document.getElementById('difficultyDropdown').addEventListener('change', function() {
-        var difficulty = this.value;
-        console.log('Selected difficulty:', difficulty);
-        setDifficulty(difficulty);
+    setDifficulty(level);
+    document.querySelectorAll('.difficulty-option').forEach(option => {
+        option.addEventListener('click', function() {
+            var difficulty = this.getAttribute('data-value');
+            console.log('Selected difficulty:', difficulty);
+            localStorage.setItem('difficulty', difficulty);
+            setDifficulty(difficulty);
+            highlightSelectedOption(difficulty);
+            document.getElementById('difficultyOptions').style.display = 'none';
+        });
+    });
+    console.log(minesCount, rows, columns);
+    startGame();
+}
+
+function highlightSelectedOption(difficulty) {
+    document.querySelectorAll('.difficulty-option').forEach(option => {
+        if (option.getAttribute('data-value') === difficulty) {
+            option.classList.add('selected');
+        } else {
+            option.classList.remove('selected');
+        }
     });
 }
 
@@ -160,10 +179,17 @@ function revealMines() {
     }
     const restartButton = document.getElementById("restartButton");
     restartButton.style.display = "flex";
+    showRestartModal();
     restartButton.addEventListener('click', function() {
+        document.getElementById('restartModal').style.display = 'none';
         location.reload();
         setDifficulty(level);
     });
+}
+
+// Function to show the modal
+function showRestartModal() {
+    document.getElementById('restartModal').style.display = 'block';
 }
 
 function checkMine(r, c) {
