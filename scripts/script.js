@@ -121,6 +121,7 @@ function startGame() {
         }
         board.push(row);
     }
+    startTimer();
 
     console.log(board);
 }
@@ -177,6 +178,11 @@ function revealMines() {
             }
         }
     }
+    gameFinished(false);
+}
+
+function gameFinished(win) {
+    stopTimer();
     const restartButton = document.getElementById("restartButton");
     restartButton.style.display = "flex";
     showRestartModal();
@@ -185,6 +191,14 @@ function revealMines() {
         location.reload();
         setDifficulty(level);
     });
+    if(win){
+        const won = document.getElementById("win");
+        won.style.display = "flex";
+    }
+    else{
+        const lost = document.getElementById("lose");
+        lost.style.display = "flex";
+    }
 }
 
 // Function to show the modal
@@ -244,6 +258,7 @@ function checkMine(r, c) {
     if (tilesClicked == rows * columns - minesCount) {
         document.getElementById("mines-count").innerText = "Cleared";
         gameOver = true;
+        gameFinished(true);
     }
 }
 

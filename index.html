@@ -12,10 +12,17 @@
         <h1>Mines: <span id="mines-count">0</span></h1>
     </div>
     <div class="main-container">
+        <!-- <div class="image-container">
+            <img src="assets/backgrounds/spongebobHappy.jpeg" alt="Description of image">
+        </div> -->
         <div class="game-board">
+            <div id="timer">Time: 0</div>
             <div id="restartModal" class="modal">
                 <div class="modal-content">
                     <button id="restartButton">Restart</button>
+                    <br>
+                    <div id="win">Won the game!!🥳</div>
+                    <div id="lose">Bombed!!🤯</div>
                 </div>
             </div>
             <div id="board"></div>
@@ -30,6 +37,7 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/timer.js"></script>
 </body>
 </html>
