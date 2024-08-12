@@ -48,10 +48,6 @@ header {
 header img {
     width: 80%;
 }
-
-header img:hover {
-    cursor: pointer;
-}
 /* Body blur effect */
 body.blur {
     overflow: hidden; /* Prevent scrolling */
@@ -144,7 +140,9 @@ body.blur .background {
     display: flex;
     justify-content: space-between;
 }
-
+.blinking {
+    animation: none;
+}
 .developer {
     flex: 1;
     margin: 0 30px;
