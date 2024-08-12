@@ -176,13 +176,40 @@ body {
     background-color: #45a049;
 }
 
+#menuButton {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hide the button */
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#menuButton:hover {
+    background-color: #45a049;
+}
+
 #win {
     display: none;
     text-align: center;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 100%;
+    position: relative;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none; /* Initially hide the button */
@@ -203,8 +230,8 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 100%;
+    position: relative;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none; /* Initially hide the button */

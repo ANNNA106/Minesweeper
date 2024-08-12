@@ -185,11 +185,17 @@ function gameFinished(win) {
     stopTimer();
     const restartButton = document.getElementById("restartButton");
     restartButton.style.display = "flex";
+    const menuButton = document.getElementById("menuButton");
+    menuButton.style.display = "flex";
     showRestartModal();
     restartButton.addEventListener('click', function() {
         document.getElementById('restartModal').style.display = 'none';
         location.reload();
         setDifficulty(level);
+    });
+    menuButton.addEventListener('click', function() {
+        document.getElementById('restartModal').style.display = 'none';
+        window.location.href = "index.html";
     });
     if(win){
         const won = document.getElementById("win");
