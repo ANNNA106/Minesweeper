@@ -62,8 +62,6 @@ body {
     width: 400px;
     height: 400px;
     background-color: lightgray;
-    /* border: 10px solid darkgray;
-    margin: 0 auto; */
     margin-top: 20px;
     border: 1px solid #000;
     display: flex;
@@ -142,6 +140,7 @@ body {
     border-radius: 10px;
     text-align: center;
 }
+
 #restartButton {
     text-align: center;
     justify-content: center;
@@ -164,7 +163,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
-
 #restartButton:hover {
     background-color: #45a049;
 }
