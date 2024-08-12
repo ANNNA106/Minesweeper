@@ -256,3 +256,24 @@ function checkTile(r, c) {
     }
     return 0;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('rules-modal');
+    const howToPlayBtn = document.getElementById('how-to-play-btn');
+    const closeBtn = document.querySelector('#rules-content .close');
+
+    howToPlayBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
