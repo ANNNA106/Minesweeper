@@ -12,6 +12,19 @@ header {
    
     text-align: center; /* Center the logo horizontally */
 }
+@font-face {
+    font-family: 'MineSweeperFont';
+    src: url('assets/mine-sweeper/mine-sweeper.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.custom-font {
+    font-family: 'MineSweeperFont', sans-serif;
+    color: #300eab;
+    font-weight: bold;
+}
 
 .background {
     position: absolute;
@@ -84,7 +97,7 @@ header img:hover {
     margin: 20px;
 }
 #rules-content {
-    text-align: :center;
+    text-align:center;
     background-color: #3e9db8;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
