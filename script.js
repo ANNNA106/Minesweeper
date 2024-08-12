@@ -280,11 +280,7 @@ function checkTile(r, c) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get modal element and blur effect
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Get modal element and blur effect
     const modal = document.getElementById('rules-modal');
-    const body = document.body;
     const body = document.body;
     const howToPlayBtn = document.getElementById('how-to-play-btn');
     const closeModalBtn = document.querySelector('.close');
