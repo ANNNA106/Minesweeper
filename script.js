@@ -121,7 +121,6 @@ function startGame() {
         }
         board.push(row);
     }
-    startTimer();
 
     console.log(board);
 }
@@ -178,33 +177,14 @@ function revealMines() {
             }
         }
     }
-    gameFinished(false);
-}
-
-function gameFinished(win) {
-    stopTimer();
     const restartButton = document.getElementById("restartButton");
     restartButton.style.display = "flex";
-    const menuButton = document.getElementById("menuButton");
-    menuButton.style.display = "flex";
     showRestartModal();
     restartButton.addEventListener('click', function() {
         document.getElementById('restartModal').style.display = 'none';
         location.reload();
         setDifficulty(level);
     });
-    menuButton.addEventListener('click', function() {
-        document.getElementById('restartModal').style.display = 'none';
-        window.location.href = "index.html";
-    });
-    if(win){
-        const won = document.getElementById("win");
-        won.style.display = "flex";
-    }
-    else{
-        const lost = document.getElementById("lose");
-        lost.style.display = "flex";
-    }
 }
 
 // Function to show the modal
@@ -264,7 +244,6 @@ function checkMine(r, c) {
     if (tilesClicked == rows * columns - minesCount) {
         document.getElementById("mines-count").innerText = "Cleared";
         gameOver = true;
-        gameFinished(true);
     }
 }
 
@@ -277,24 +256,67 @@ function checkTile(r, c) {
     }
     return 0;
 }
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get modal element and blur effect
     const modal = document.getElementById('rules-modal');
+    const body = document.body;
     const howToPlayBtn = document.getElementById('how-to-play-btn');
-    const closeBtn = document.querySelector('#rules-content .close');
+    const closeModalBtn = document.querySelector('.close');
 
-    howToPlayBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        modal.style.display = 'block';
-    });
+    // Function to open modal
+    function openModal() {
+        modal.style.display = 'flex'; // Show the modal
+        body.classList.add('blur'); // Add blur effect
+        document.body.scrollTop = 0; // Reset scroll position
+        document.documentElement.scrollTop = 0; // Reset scroll position
+    }
 
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+    // Function to close modal
+    function closeModal() {
+        modal.style.display = 'none'; // Hide the modal
+        body.classList.remove('blur'); // Remove blur effect
+    }
 
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
+    // Show modal when button is clicked
+    howToPlayBtn.addEventListener('click', openModal);
+
+    // Hide modal when close button is clicked
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Hide modal if clicking outside of modal content
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
         }
-    });
+    });});
+    // JavaScript for Contact Us modal
+
+// JavaScript for Contact Us modal
+
+// Function to show the contact modal
+function openContactModal() {
+    document.getElementById('contact-modal').style.display = 'flex'; // Show the modal
+    document.body.classList.add('blur'); // Add blur effect
+}
+
+// Function to close the contact modal
+function closeContactModal() {
+    document.getElementById('contact-modal').style.display = 'none'; // Hide the modal
+    document.body.classList.remove('blur'); // Remove blur effect
+}
+
+// Event listener for "Contact Us" button
+document.getElementById('contact-us-btn').addEventListener('click', openContactModal);
+
+// Event listener for close button in the modal
+document.querySelector('#contact-modal .close').addEventListener('click', closeContactModal);
+
+// Event listener for clicking outside the modal content to close the modal
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('contact-modal');
+    if (event.target === modal) {
+        closeContactModal();
+    }
 });
 
