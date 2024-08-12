@@ -9,7 +9,7 @@ Minesweeper is a single-player puzzle game. The objective is to clear a rectangu
 ## Features
 
 - Classic Minesweeper gameplay
-- Works on all the web browsers
+- Works on most of the web browsers (firefox, google, edge, safari)
 - Timer to track your progress
 - Restart button to reset the game
 
