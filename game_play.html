@@ -11,12 +11,18 @@
         <h1>Minesweeper</h1>
         <h1>Mines: <span id="mines-count">0</span></h1>
         <a href="index.html" class="home-button">Home</a>
+        <div id="timer">10:00</div>
     </div>
     <div class="main-container">
         <div class="game-board">
             <div id="restartModal" class="modal">
                 <div class="modal-content">
                     <button id="restartButton">Restart</button>
+                    <br>
+                    <div id="menuButton">Back to menu</div>
+                    <br>
+                    <div id="win">Won the game!!🥳</div>
+                    <div id="lose">Bombed!!🤯</div>
                 </div>
             </div>
             <div id="board"></div>
@@ -31,6 +37,7 @@
             </div>
         </div>
     </div>
+    <script src="timer.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
