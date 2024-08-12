@@ -11,7 +11,13 @@
     <body>
         <h1>Mines: <span id="mines-count">0</span></h1>
         <button id="restartButton">Restart</button>
-        <div id="blackout"></div>
+        <button id="difficultyButton">Set Difficulty</button>
+        <select id="difficultyDropdown" style="display: none;">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <!-- <div id="blackout"></div> -->
         <div id="board"></div>
         <br>
         <button id="flag-button">🚩</button>
