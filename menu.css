@@ -48,10 +48,6 @@ header {
 header img {
     width: 80%;
 }
-
-header img:hover {
-    cursor: pointer;
-}
 /* Body blur effect */
 body.blur {
     overflow: hidden; /* Prevent scrolling */
@@ -60,7 +56,6 @@ body.blur {
 body.blur .background {
     filter: blur(5px); /* Adjust the blur level */
 }
-/* Modal styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -76,7 +71,9 @@ body.blur .background {
     justify-content: center;
 }
 
-
+#rules-modal, #contact-modal {
+    display: none; /* Hide modals by default */
+}
 
 #rules-content p {
     margin: 5px 0; /* Reduced margins between paragraphs */
@@ -143,12 +140,23 @@ body.blur .background {
     display: flex;
     justify-content: space-between;
 }
-
+.blinking {
+    animation: none;
+}
 .developer {
     flex: 1;
-    margin: 0 10px;
+    margin: 0 30px;
+}
+.developer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #120c95;
 }
 
+.developer a i {
+    margin-right: 8px;
+}
 /* Modal content */
 #contact-content {
     background-color: #f7f7f7;
@@ -156,7 +164,7 @@ body.blur .background {
     padding: 20px;
     color: #120c95;
     border: 1px solid #888;
-    width: 80%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     max-width: 500px; /* Limit the maximum width */
     border-radius: 8px; /* Rounded corners */
     display: flex;

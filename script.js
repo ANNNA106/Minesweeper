@@ -177,14 +177,8 @@ function revealMines() {
             }
         }
     }
-    const restartButton = document.getElementById("restartButton");
-    restartButton.style.display = "flex";
-    showRestartModal();
-    restartButton.addEventListener('click', function() {
-        document.getElementById('restartModal').style.display = 'none';
-        location.reload();
-        setDifficulty(level);
-    });
+    gameFinished(false);
+
 }
 
 // Function to show the modal
@@ -244,7 +238,34 @@ function checkMine(r, c) {
     if (tilesClicked == rows * columns - minesCount) {
         document.getElementById("mines-count").innerText = "Cleared";
         gameOver = true;
+        gameFinished(true);
     }
+
+}
+function gameFinished(win) {
+    const restartButton = document.getElementById("restartButton");
+    restartButton.style.display = "flex";
+    const menuButton = document.getElementById("menuButton");
+    menuButton.style.display = "flex";
+    showRestartModal();
+    restartButton.addEventListener('click', function() {
+        document.getElementById('restartModal').style.display = 'none';
+        location.reload();
+        setDifficulty(level);
+    });
+    menuButton.addEventListener('click', function() {
+        document.getElementById('restartModal').style.display = 'none';
+        window.location.href = "index.html";
+    });
+    if(win){
+        const won = document.getElementById("win");
+        won.style.display = "flex";
+    }
+    else{
+        const lost = document.getElementById("lose");
+        lost.style.display = "flex";
+    }
+    console.log("Game Over");
 }
 
 function checkTile(r, c) {
@@ -319,4 +340,3 @@ window.addEventListener('click', (event) => {
         closeContactModal();
     }
 });
-
