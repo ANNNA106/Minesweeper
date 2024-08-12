@@ -22,7 +22,7 @@ header {
 
 .custom-font {
     font-family: 'MineSweeperFont', sans-serif;
-    color: #300eab;
+    color: #210576;
     font-weight: bold;
 }
 
@@ -52,7 +52,35 @@ header img {
 header img:hover {
     cursor: pointer;
 }
+/* Body blur effect */
+body.blur {
+    overflow: hidden; /* Prevent scrolling */
+}
 
+body.blur .background {
+    filter: blur(5px); /* Adjust the blur level */
+}
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#rules-content p {
+    margin: 5px 0; /* Reduced margins between paragraphs */
+}
 
 .container {
     text-align: center;
@@ -76,18 +104,6 @@ header img:hover {
 
 .button:hover {
     background-color: #0a16bb;
-}
-/* Modal styles */
-.modal {
-    text-align: center;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
 }
 #How-to-play-heading {
     text-align: center;
@@ -123,3 +139,28 @@ header img:hover {
     cursor: pointer;
 }
 
+.developer-contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.developer {
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Modal content */
+#contact-content {
+    background-color: #f7f7f7;
+
+    padding: 20px;
+    color: #120c95;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px; /* Limit the maximum width */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

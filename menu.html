@@ -5,36 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MineSweeper Start Page</title>
     <link rel="stylesheet" href="menu.css">
+   
+
 </head>
 <body>
     
     <div class="background"><img src="assets\wp12297046-minesweeper-wallpapers.jpg"></div>
     <header>
-        <h1 class="custom-font">Minesweeper</h1>
+       <h1><img src="assets\minesweeper-logo.png" alt="Description of Image" /></h1>
     </header>
     <div class="container">
 
         <a href="index.html" class="button">Start Game</a>
-        <a href="#" class="button" id="how-to-play-btn">How to Play</a>
-        <a href="set-difficulty.html" class="button">Set Difficulty</a>
+        <a a href="#" class="button" id="how-to-play-btn">How to Play</a>
+        <a href="#" class="button" id ="contact-us-btn">Contact Us</a>
     </div>
     <div id="rules-modal" class="modal">
         <div id="rules-content">
-            <span class="close">&langle; &times; &rangle;</span>
-            <h2 id="How-to-play-heading">How To Play</h2>
+            <span class="close">&times;</span>
+            <h2 class="custom-font">Welcome to Minesweeper!</h2>
+            <p>The objective of the game is to uncover all the tiles that do not contain mines</p>
+            <p>Uncover a mine and you lose the game</p>
+            <p>Choose the difficutly level</p>
             <p>Click on the tiles to reveal them</p>
             <p>The number on the tile shows how many adjacent tiles are mines</p>
             <p>Click and hold to place a flag <i class="fa-solid fa-flag-pennant"></i> on tile that you think are mines</p>
             <p>Do the same to remove the flag</p>
             <p>Try to uncover the board without revealing a mine <i class="fa-solid fa-bomb"></i></p>
-            <p>Good Luck!</p>
-            <p style="font-weight: bold;">Keyboard Controls</p>
-            <p>W A S D -> Move cursor</p>
-            <p>Q -> Reveal tile</p>    
-            <p>E -> Place/remove flag</p>    
+            <p>Good Luck!</p>  
+        </div>
+    </div>
+    <div id="contact-modal" class="modal">
+        <div id="contact-content">
+            <span class="close">&times;</span>
+            <h2 class="custom-font">Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us!</p>
+            <div class="developer-contacts">
+                <div class="developer">
+                    <p><strong>Anya Rajan</strong></p>
+                    <p>Email: anyarajan22@iitk.ac.in</p>
+                </div>
+                <div class="develope r">
+                    <p><strong>Ananya Singh Baghel</strong></p>
+                    <p>Email: ananya22@iitk.ac.in</p>
+                   
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="menu.js"></script>
+</body>
 </body>
 </html>
 
