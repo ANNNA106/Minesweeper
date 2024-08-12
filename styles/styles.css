@@ -232,11 +232,24 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
-
-#restartButton:hover {
-    background-color: #45a049;
+#restartButton, #menuButton {
+    display: inline-block; /* Make sure they are both inline elements */
+    padding: 10px 20px; /* Adjust padding to match the button */
+    font-size: 18px; /* Ensure the font size is the same */
+    font-weight: bold;
+    background-color: #4CAF50; /* Match the background color */
+    color: white; /* Text color */
+    border: none; /* Remove any border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    text-align: center; /* Center text */
 }
-
+#restartButton:hover {
+    background-color: #116315;
+}
+#menuButton:hover {
+    background-color: #116315;
+}
 #difficultyButton {
     text-align: center;
     justify-content: center;
