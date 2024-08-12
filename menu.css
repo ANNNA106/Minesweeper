@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+header {
+   
+    text-align: center; /* Center the logo horizontally */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place behind other content */
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3; /* Adjust opacity here */
+}
+#logo {
+    max-width: 100%; /* Ensure the logo scales with screen size */
+    height: auto;
+}
+header img {
+    width: 80%;
+}
+
+header img:hover {
+    cursor: pointer;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.button {
+    display: block;
+    margin: 20px;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #0c55bc9f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0a16bb;
+}
+/* Modal styles */
+.modal {
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+}
+#How-to-play-heading {
+    text-align: center;
+    color: #270d84;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
+}
+#rules-content {
+    text-align: :center;
+    background-color: #3e9db8;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    color:#c6eae5;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Limit the size */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    color: #270d84;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(16, 8, 88);
+    text-decoration: none;
+    cursor: pointer;
+}
+
