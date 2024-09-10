@@ -1,6 +1,5 @@
 name: Lint and Test
 
-# Controls when the action will run
 on:
   push:
     branches:
@@ -9,27 +8,23 @@ on:
     branches:
       - main
 
-# Define the job that will run the linter
 jobs:
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the code from the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js (which you need for ESLint)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # or the version you're using
+          node-version: '16'  # Or your project's version
 
-      # Step 3: Install dependencies (including ESLint)
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run ESLint
+      # Run ESLint and ensure it fails on error
       - name: Run ESLint
         run: |
           npm run lint
