@@ -255,7 +255,7 @@ function checkMine(r, c) {
 }
 function gameFinished(win) {
     // Stop the timer when the game finishes
-    clearInterval(timerInterval);
+    //clearInterval(timerInterval);
     
     const restartButton = document.getElementById("restartButton");
     restartButton.style.display = "flex";
